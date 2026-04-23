@@ -26,19 +26,33 @@ This environment perfectly encapsulates three core Hackathon themes:
 - `reflective_surface`: Immediate cooling, completely degrades over 3 years.
 - `tree_canopy`: Peak cooling, but starts at 0 and takes 1 year to fully mature.
 
+## OpenEnv Validation & Documentation
+This environment is fully compatible with the OpenEnv standard (see `openenv.yaml` for tasks and API routing).
+For Hackathon judges and mentors, please review `project_handoff.md` for a complete architecture overview and our "Triple Threat" hackathon strategy.
+
 ## Setup
 ```bash
+# Install dependencies (using pip or uv)
 pip install -r requirements.txt
 # Copy environment variables
 cp .env.example .env
 ```
 
 ## Running the Server & Dashboard
+
+### Local Execution
 ```bash
 # Start the simulation backend
 uvicorn server.app:app --host 0.0.0.0 --port 8000
 
 # To view the visual dashboard, simply open dashboard.html in your browser!
+```
+
+### Docker (Hugging Face Spaces)
+A `Dockerfile` is included for easy deployment. Note that the Docker image exposes port `7860`.
+```bash
+docker build -t urban-heat-env .
+docker run -p 7860:7860 urban-heat-env
 ```
 
 ## Running RL Training 

@@ -20,4 +20,3 @@ endpoints:
   step: POST /step
   state: GET /state
   tasks: GET /tasks
-```

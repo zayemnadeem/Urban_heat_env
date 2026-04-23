@@ -28,10 +28,10 @@ except KeyError:
 ENV_URL = os.environ.get("ENV_URL")
 if not ENV_URL:
     try:
-        requests.get("http://localhost:7860/health", timeout=2)
-        ENV_URL = "http://localhost:7860"
-    except:
+        requests.get("http://localhost:8000/health", timeout=2)
         ENV_URL = "http://localhost:8000"
+    except:
+        ENV_URL = "http://localhost:7860"
 
 BENCHMARK_NAME = "urban_heat_env"
 
