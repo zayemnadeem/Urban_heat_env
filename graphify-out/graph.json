@@ -9,7 +9,7 @@
       "source_file": "inference.py",
       "source_location": "L1",
       "id": "inference_py",
-      "community": 3,
+      "community": 4,
       "norm_label": "inference.py"
     },
     {
@@ -18,7 +18,7 @@
       "source_file": "inference.py",
       "source_location": "L42",
       "id": "inference_get_state",
-      "community": 3,
+      "community": 4,
       "norm_label": "get_state()"
     },
     {
@@ -27,7 +27,7 @@
       "source_file": "inference.py",
       "source_location": "L47",
       "id": "inference_reset_env",
-      "community": 3,
+      "community": 4,
       "norm_label": "reset_env()"
     },
     {
@@ -36,7 +36,7 @@
       "source_file": "inference.py",
       "source_location": "L52",
       "id": "inference_step_env",
-      "community": 3,
+      "community": 4,
       "norm_label": "step_env()"
     },
     {
@@ -45,7 +45,7 @@
       "source_file": "inference.py",
       "source_location": "L57",
       "id": "inference_get_tasks",
-      "community": 3,
+      "community": 4,
       "norm_label": "get_tasks()"
     },
     {
@@ -54,7 +54,7 @@
       "source_file": "inference.py",
       "source_location": "L62",
       "id": "inference_grade_task",
-      "community": 3,
+      "community": 4,
       "norm_label": "grade_task()"
     },
     {
@@ -63,7 +63,7 @@
       "source_file": "inference.py",
       "source_location": "L67",
       "id": "inference_format_prompt",
-      "community": 3,
+      "community": 4,
       "norm_label": "format_prompt()"
     },
     {
@@ -72,7 +72,7 @@
       "source_file": "inference.py",
       "source_location": "L88",
       "id": "inference_main",
-      "community": 3,
+      "community": 4,
       "norm_label": "main()"
     },
     {
@@ -166,39 +166,84 @@
       "norm_label": "taskdefinition"
     },
     {
+      "label": "plot_inference.py",
+      "file_type": "code",
+      "source_file": "plot_inference.py",
+      "source_location": "L1",
+      "id": "plot_inference_py",
+      "community": 6,
+      "norm_label": "plot_inference.py"
+    },
+    {
+      "label": "plot_inference_metrics()",
+      "file_type": "code",
+      "source_file": "plot_inference.py",
+      "source_location": "L5",
+      "id": "plot_inference_plot_inference_metrics",
+      "community": 6,
+      "norm_label": "plot_inference_metrics()"
+    },
+    {
       "label": "train_trl.py",
       "file_type": "code",
       "source_file": "train_trl.py",
       "source_location": "L1",
       "id": "train_trl_py",
-      "community": 4,
+      "community": 1,
       "norm_label": "train_trl.py"
     },
     {
       "label": "env_step()",
       "file_type": "code",
       "source_file": "train_trl.py",
-      "source_location": "L25",
+      "source_location": "L34",
       "id": "train_trl_env_step",
-      "community": 4,
+      "community": 1,
       "norm_label": "env_step()"
+    },
+    {
+      "label": "env_reset()",
+      "file_type": "code",
+      "source_file": "train_trl.py",
+      "source_location": "L42",
+      "id": "train_trl_env_reset",
+      "community": 1,
+      "norm_label": "env_reset()"
     },
     {
       "label": "format_env_prompt()",
       "file_type": "code",
       "source_file": "train_trl.py",
-      "source_location": "L33",
+      "source_location": "L48",
       "id": "train_trl_format_env_prompt",
-      "community": 4,
+      "community": 1,
       "norm_label": "format_env_prompt()"
+    },
+    {
+      "label": "safe_int()",
+      "file_type": "code",
+      "source_file": "train_trl.py",
+      "source_location": "L57",
+      "id": "train_trl_safe_int",
+      "community": 1,
+      "norm_label": "safe_int()"
+    },
+    {
+      "label": "smart_action()",
+      "file_type": "code",
+      "source_file": "train_trl.py",
+      "source_location": "L71",
+      "id": "train_trl_smart_action",
+      "community": 1,
+      "norm_label": "smart_action()"
     },
     {
       "label": "main()",
       "file_type": "code",
       "source_file": "train_trl.py",
-      "source_location": "L40",
+      "source_location": "L87",
       "id": "train_trl_main",
-      "community": 4,
+      "community": 1,
       "norm_label": "main()"
     },
     {
@@ -206,18 +251,27 @@
       "file_type": "rationale",
       "source_file": "C:\\Users\\zayem\\Desktop\\urban_heat_env\\train_trl.py",
       "source_location": "L1",
-      "community": 4,
+      "community": 1,
       "norm_label": "hackathon round 2: minimal trl training script this demonstrates how to train th",
       "id": "train_trl_rationale_1"
     },
     {
-      "label": "Hits the local OpenEnv API exactly like inference.py",
+      "label": "Hit the OpenEnv API exactly like inference.py.",
       "file_type": "rationale",
-      "source_file": "C:\\Users\\zayem\\Desktop\\urban_heat_env\\train_trl.py",
-      "source_location": "L26",
-      "community": 4,
-      "norm_label": "hits the local openenv api exactly like inference.py",
-      "id": "train_trl_rationale_26"
+      "source_file": "train_trl.py",
+      "source_location": "L35",
+      "id": "train_trl_rationale_35",
+      "community": 1,
+      "norm_label": "hit the openenv api exactly like inference.py."
+    },
+    {
+      "label": "Returns a bureaucratically valid action for the current epoch.",
+      "file_type": "rationale",
+      "source_file": "train_trl.py",
+      "source_location": "L72",
+      "id": "train_trl_rationale_72",
+      "community": 1,
+      "norm_label": "returns a bureaucratically valid action for the current epoch."
     },
     {
       "label": "app.py",
@@ -225,7 +279,7 @@
       "source_file": "server\\app.py",
       "source_location": "L1",
       "id": "server_app_py",
-      "community": 2,
+      "community": 3,
       "norm_label": "app.py"
     },
     {
@@ -234,7 +288,7 @@
       "source_file": "server\\app.py",
       "source_location": "L30",
       "id": "app_serve_dashboard",
-      "community": 2,
+      "community": 3,
       "norm_label": "serve_dashboard()"
     },
     {
@@ -243,7 +297,7 @@
       "source_file": "server\\app.py",
       "source_location": "L34",
       "id": "app_health",
-      "community": 2,
+      "community": 3,
       "norm_label": "health()"
     },
     {
@@ -252,7 +306,7 @@
       "source_file": "server\\app.py",
       "source_location": "L38",
       "id": "app_reset",
-      "community": 2,
+      "community": 3,
       "norm_label": "reset()"
     },
     {
@@ -261,7 +315,7 @@
       "source_file": "server\\app.py",
       "source_location": "L42",
       "id": "app_step",
-      "community": 2,
+      "community": 3,
       "norm_label": "step()"
     },
     {
@@ -270,7 +324,7 @@
       "source_file": "server\\app.py",
       "source_location": "L53",
       "id": "app_state",
-      "community": 2,
+      "community": 3,
       "norm_label": "state()"
     },
     {
@@ -279,7 +333,7 @@
       "source_file": "server\\app.py",
       "source_location": "L59",
       "id": "app_get_tasks",
-      "community": 2,
+      "community": 3,
       "norm_label": "get_tasks()"
     },
     {
@@ -288,7 +342,7 @@
       "source_file": "server\\app.py",
       "source_location": "L79",
       "id": "app_grade",
-      "community": 2,
+      "community": 3,
       "norm_label": "grade()"
     },
     {
@@ -297,7 +351,7 @@
       "source_file": "server\\app.py",
       "source_location": "L84",
       "id": "app_main",
-      "community": 2,
+      "community": 3,
       "norm_label": "main()"
     },
     {
@@ -306,7 +360,7 @@
       "source_file": "C:\\Users\\zayem\\Desktop\\urban_heat_env\\server\\environment.py",
       "source_location": "L1",
       "id": "c_users_zayem_desktop_urban_heat_env_server_environment_py",
-      "community": 1,
+      "community": 2,
       "norm_label": "environment.py"
     },
     {
@@ -315,7 +369,7 @@
       "source_file": "C:\\Users\\zayem\\Desktop\\urban_heat_env\\server\\environment.py",
       "source_location": "L48",
       "id": "environment_citygrid",
-      "community": 1,
+      "community": 2,
       "norm_label": "citygrid"
     },
     {
@@ -324,7 +378,7 @@
       "source_file": "C:\\Users\\zayem\\Desktop\\urban_heat_env\\server\\environment.py",
       "source_location": "L49",
       "id": "environment_citygrid_init",
-      "community": 1,
+      "community": 2,
       "norm_label": ".__init__()"
     },
     {
@@ -333,7 +387,7 @@
       "source_file": "C:\\Users\\zayem\\Desktop\\urban_heat_env\\server\\environment.py",
       "source_location": "L62",
       "id": "environment_citygrid_reset",
-      "community": 1,
+      "community": 2,
       "norm_label": ".reset()"
     },
     {
@@ -342,7 +396,7 @@
       "source_file": "C:\\Users\\zayem\\Desktop\\urban_heat_env\\server\\environment.py",
       "source_location": "L102",
       "id": "environment_citygrid_get_season",
-      "community": 1,
+      "community": 2,
       "norm_label": ".get_season()"
     },
     {
@@ -351,7 +405,7 @@
       "source_file": "C:\\Users\\zayem\\Desktop\\urban_heat_env\\server\\environment.py",
       "source_location": "L110",
       "id": "environment_citygrid_step",
-      "community": 1,
+      "community": 2,
       "norm_label": ".step()"
     },
     {
@@ -396,7 +450,7 @@
       "source_file": "C:\\Users\\zayem\\Desktop\\urban_heat_env\\server\\environment.py",
       "source_location": "L304",
       "id": "environment_citygrid_compute_step_reward",
-      "community": 1,
+      "community": 2,
       "norm_label": "._compute_step_reward()"
     },
     {
@@ -405,7 +459,7 @@
       "source_file": "C:\\Users\\zayem\\Desktop\\urban_heat_env\\server\\environment.py",
       "source_location": "L319",
       "id": "environment_citygrid_build_city_state",
-      "community": 1,
+      "community": 2,
       "norm_label": "._build_city_state()"
     },
     {
@@ -414,7 +468,7 @@
       "source_file": "C:\\Users\\zayem\\Desktop\\urban_heat_env\\server\\environment.py",
       "source_location": "L353",
       "id": "environment_citygrid_snapshot",
-      "community": 1,
+      "community": 2,
       "norm_label": ".snapshot()"
     },
     {
@@ -423,7 +477,7 @@
       "source_file": "C:\\Users\\zayem\\Desktop\\urban_heat_env\\server\\environment.py",
       "source_location": "L367",
       "id": "environment_citygrid_restore",
-      "community": 1,
+      "community": 2,
       "norm_label": ".restore()"
     },
     {
@@ -450,8 +504,17 @@
       "source_file": "C:\\Users\\zayem\\Desktop\\urban_heat_env\\server\\__init__.py",
       "source_location": "L1",
       "id": "c_users_zayem_desktop_urban_heat_env_server_init_py",
-      "community": 6,
+      "community": 7,
       "norm_label": "__init__.py"
+    },
+    {
+      "label": "Hits the local OpenEnv API exactly like inference.py",
+      "file_type": "rationale",
+      "source_file": "C:\\Users\\zayem\\Desktop\\urban_heat_env\\train_trl.py",
+      "source_location": "L26",
+      "community": 8,
+      "norm_label": "hits the local openenv api exactly like inference.py",
+      "id": "train_trl_rationale_26"
     }
   ],
   "links": [
@@ -543,7 +606,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "inference.py",
-      "source_location": "L134",
+      "source_location": "L135",
       "weight": 1.0,
       "_src": "inference_main",
       "_tgt": "inference_get_state",
@@ -555,7 +618,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "inference.py",
-      "source_location": "L128",
+      "source_location": "L129",
       "weight": 1.0,
       "_src": "inference_main",
       "_tgt": "inference_reset_env",
@@ -567,7 +630,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "inference.py",
-      "source_location": "L185",
+      "source_location": "L186",
       "weight": 1.0,
       "_src": "inference_main",
       "_tgt": "inference_step_env",
@@ -591,7 +654,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "inference.py",
-      "source_location": "L205",
+      "source_location": "L206",
       "weight": 1.0,
       "_src": "inference_main",
       "_tgt": "inference_grade_task",
@@ -603,7 +666,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "inference.py",
-      "source_location": "L138",
+      "source_location": "L139",
       "weight": 1.0,
       "_src": "inference_main",
       "_tgt": "inference_format_prompt",
@@ -1106,8 +1169,20 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "plot_inference.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_src": "plot_inference_py",
+      "_tgt": "plot_inference_plot_inference_metrics",
+      "source": "plot_inference_py",
+      "target": "plot_inference_plot_inference_metrics",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "train_trl.py",
-      "source_location": "L25",
+      "source_location": "L34",
       "weight": 1.0,
       "_src": "train_trl_py",
       "_tgt": "train_trl_env_step",
@@ -1119,7 +1194,19 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "train_trl.py",
-      "source_location": "L33",
+      "source_location": "L42",
+      "weight": 1.0,
+      "_src": "train_trl_py",
+      "_tgt": "train_trl_env_reset",
+      "source": "train_trl_py",
+      "target": "train_trl_env_reset",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "train_trl.py",
+      "source_location": "L48",
       "weight": 1.0,
       "_src": "train_trl_py",
       "_tgt": "train_trl_format_env_prompt",
@@ -1131,7 +1218,31 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "train_trl.py",
-      "source_location": "L40",
+      "source_location": "L57",
+      "weight": 1.0,
+      "_src": "train_trl_py",
+      "_tgt": "train_trl_safe_int",
+      "source": "train_trl_py",
+      "target": "train_trl_safe_int",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "train_trl.py",
+      "source_location": "L71",
+      "weight": 1.0,
+      "_src": "train_trl_py",
+      "_tgt": "train_trl_smart_action",
+      "source": "train_trl_py",
+      "target": "train_trl_smart_action",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "train_trl.py",
+      "source_location": "L87",
       "weight": 1.0,
       "_src": "train_trl_py",
       "_tgt": "train_trl_main",
@@ -1155,7 +1266,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "train_trl.py",
-      "source_location": "L95",
+      "source_location": "L151",
       "weight": 1.0,
       "_src": "train_trl_main",
       "_tgt": "train_trl_env_step",
@@ -1167,24 +1278,72 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "train_trl.py",
-      "source_location": "L26",
+      "source_location": "L35",
       "weight": 1.0,
-      "_src": "train_trl_rationale_26",
+      "_src": "train_trl_rationale_35",
       "_tgt": "train_trl_env_step",
       "source": "train_trl_env_step",
-      "target": "train_trl_rationale_26",
+      "target": "train_trl_rationale_35",
       "confidence_score": 1.0
     },
     {
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "train_trl.py",
-      "source_location": "L66",
+      "source_location": "L102",
+      "weight": 1.0,
+      "_src": "train_trl_main",
+      "_tgt": "train_trl_env_reset",
+      "source": "train_trl_env_reset",
+      "target": "train_trl_main",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "train_trl.py",
+      "source_location": "L108",
       "weight": 1.0,
       "_src": "train_trl_main",
       "_tgt": "train_trl_format_env_prompt",
       "source": "train_trl_format_env_prompt",
       "target": "train_trl_main",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "train_trl.py",
+      "source_location": "L143",
+      "weight": 1.0,
+      "_src": "train_trl_main",
+      "_tgt": "train_trl_safe_int",
+      "source": "train_trl_safe_int",
+      "target": "train_trl_main",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "train_trl.py",
+      "source_location": "L137",
+      "weight": 1.0,
+      "_src": "train_trl_main",
+      "_tgt": "train_trl_smart_action",
+      "source": "train_trl_smart_action",
+      "target": "train_trl_main",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "train_trl.py",
+      "source_location": "L72",
+      "weight": 1.0,
+      "_src": "train_trl_rationale_72",
+      "_tgt": "train_trl_smart_action",
+      "source": "train_trl_smart_action",
+      "target": "train_trl_rationale_72",
       "confidence_score": 1.0
     },
     {
