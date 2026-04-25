@@ -77,12 +77,18 @@ def main():
         except:
             parsed_action = {"action_type": "query_zoning", "row": 0, "col": 0, "intervention_type": "tree_canopy"}
 
+        def safe_int(val, default=0):
+            try:
+                return int(val)
+            except (ValueError, TypeError):
+                return default
+
         action_data = {
             "task_id": "full_mitigation",
-            "action_type": parsed_action.get("action_type", "query_zoning"),
-            "row": int(parsed_action.get("row", 0)),
-            "col": int(parsed_action.get("col", 0)),
-            "intervention_type": parsed_action.get("intervention_type", "tree_canopy")
+            "action_type": str(parsed_action.get("action_type", "query_zoning")),
+            "row": safe_int(parsed_action.get("row", 0)),
+            "col": safe_int(parsed_action.get("col", 0)),
+            "intervention_type": str(parsed_action.get("intervention_type", "tree_canopy"))
         }
 
         # 3. Environment Step
