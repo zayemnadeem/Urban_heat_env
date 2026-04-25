@@ -84,15 +84,6 @@ Clients interact with the environment by making HTTP POST/GET requests to the se
 ## Building and Using Your Environment
 
 ### Setup and Local Execution
-
-<<<<<<< HEAD
-## OpenEnv Validation & Documentation
-This environment is fully compatible with the OpenEnv standard (see `openenv.yaml` for tasks and API routing).
-For Hackathon judges and mentors, please review `project_handoff.md` for a complete architecture overview and our "Triple Threat" hackathon strategy.
-
-## Setup
-=======
->>>>>>> 37bac00ae309dd9d91d8588635e31b31d3f47bda
 ```bash
 # Install dependencies (using pip or uv)
 pip install -r requirements.txt
@@ -100,14 +91,7 @@ pip install -r requirements.txt
 cp .env.example .env
 ```
 
-<<<<<<< HEAD
-## Running the Server & Dashboard
-
-### Local Execution
-=======
 ### Running the Server & Dashboard
-
->>>>>>> 37bac00ae309dd9d91d8588635e31b31d3f47bda
 ```bash
 # Start the simulation backend
 uvicorn server.app:app --host 0.0.0.0 --port 8000
@@ -115,7 +99,10 @@ uvicorn server.app:app --host 0.0.0.0 --port 8000
 # To view the visual dashboard, simply open dashboard.html in your browser!
 ```
 
-<<<<<<< HEAD
+## OpenEnv Validation & Documentation
+This environment is compatible with the OpenEnv standard (see `openenv.yaml` for tasks and API routing).
+For hackathon judges and mentors, review `project_handoff.md` for an architecture overview and strategy.
+
 ### Docker (Hugging Face Spaces)
 A `Dockerfile` is included for easy deployment. Note that the Docker image exposes port `7860`.
 ```bash
@@ -125,12 +112,6 @@ docker run -p 7860:7860 urban-heat-env
 
 ## Running RL Training 
 To verify our ability to solve this complex space, you can run the provided Hugging Face TRL PPO training script:
-=======
-### Running RL Training 
-
-To verify the ability to solve this complex space, you can run the provided Hugging Face TRL PPO training script:
-
->>>>>>> 37bac00ae309dd9d91d8588635e31b31d3f47bda
 ```bash
 python train_trl.py
 ```

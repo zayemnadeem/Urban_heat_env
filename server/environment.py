@@ -117,6 +117,9 @@ class CityGrid:
     ) -> tuple[CityState, float, bool, dict[str, Any]]:
         
         info: dict[str, Any] = {"error": None}
+        # Keep a copy of the previous temperature field so step-reward
+        # can measure improvement from the last timestep.
+        prev_temps = self.temperatures.copy()
         
         if self.done:
             return self._build_city_state(), 0.0, True, {"error": "episode already done"}
@@ -245,7 +248,7 @@ class CityGrid:
         self.temperatures = np.round(current_temps, 2)
 
         # Compute Step Reward
-        reward = self._compute_step_reward(task_id, current_temps)
+        reward = self._compute_step_reward(task_id, prev_temps)
 
         if self.step_count >= MAX_STEPS:
             self.done = True
