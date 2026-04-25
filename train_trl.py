@@ -17,9 +17,9 @@ import re
 config = PPOConfig(
     model_name="Qwen/Qwen2.5-1.5B-Instruct", # Use a smaller model for Colab
     learning_rate=1.41e-5,
-    batch_size=8,
-    mini_batch_size=2,
-    gradient_accumulation_steps=4,
+    batch_size=1,
+    mini_batch_size=1,
+    gradient_accumulation_steps=1,
 )
 
 def env_step(action_dict):
