@@ -16,7 +16,7 @@
       "label": "get_state()",
       "file_type": "code",
       "source_file": "C:\\Users\\zayem\\Desktop\\urban_heat_env\\inference.py",
-      "source_location": "L38",
+      "source_location": "L42",
       "id": "inference_get_state",
       "community": 2,
       "norm_label": "get_state()"
@@ -25,7 +25,7 @@
       "label": "reset_env()",
       "file_type": "code",
       "source_file": "C:\\Users\\zayem\\Desktop\\urban_heat_env\\inference.py",
-      "source_location": "L43",
+      "source_location": "L47",
       "id": "inference_reset_env",
       "community": 2,
       "norm_label": "reset_env()"
@@ -34,7 +34,7 @@
       "label": "step_env()",
       "file_type": "code",
       "source_file": "C:\\Users\\zayem\\Desktop\\urban_heat_env\\inference.py",
-      "source_location": "L48",
+      "source_location": "L52",
       "id": "inference_step_env",
       "community": 2,
       "norm_label": "step_env()"
@@ -43,7 +43,7 @@
       "label": "get_tasks()",
       "file_type": "code",
       "source_file": "C:\\Users\\zayem\\Desktop\\urban_heat_env\\inference.py",
-      "source_location": "L53",
+      "source_location": "L57",
       "id": "inference_get_tasks",
       "community": 2,
       "norm_label": "get_tasks()"
@@ -52,7 +52,7 @@
       "label": "grade_task()",
       "file_type": "code",
       "source_file": "C:\\Users\\zayem\\Desktop\\urban_heat_env\\inference.py",
-      "source_location": "L58",
+      "source_location": "L62",
       "id": "inference_grade_task",
       "community": 2,
       "norm_label": "grade_task()"
@@ -61,7 +61,7 @@
       "label": "format_prompt()",
       "file_type": "code",
       "source_file": "C:\\Users\\zayem\\Desktop\\urban_heat_env\\inference.py",
-      "source_location": "L63",
+      "source_location": "L67",
       "id": "inference_format_prompt",
       "community": 2,
       "norm_label": "format_prompt()"
@@ -70,7 +70,7 @@
       "label": "main()",
       "file_type": "code",
       "source_file": "C:\\Users\\zayem\\Desktop\\urban_heat_env\\inference.py",
-      "source_location": "L84",
+      "source_location": "L88",
       "id": "inference_main",
       "community": 2,
       "norm_label": "main()"
@@ -206,18 +206,18 @@
       "file_type": "rationale",
       "source_file": "C:\\Users\\zayem\\Desktop\\urban_heat_env\\train_trl.py",
       "source_location": "L1",
-      "id": "train_trl_rationale_1",
       "community": 4,
-      "norm_label": "hackathon round 2: minimal trl training script this demonstrates how to train th"
+      "norm_label": "hackathon round 2: minimal trl training script this demonstrates how to train th",
+      "id": "train_trl_rationale_1"
     },
     {
       "label": "Hits the local OpenEnv API exactly like inference.py",
       "file_type": "rationale",
       "source_file": "C:\\Users\\zayem\\Desktop\\urban_heat_env\\train_trl.py",
       "source_location": "L26",
-      "id": "train_trl_rationale_26",
       "community": 4,
-      "norm_label": "hits the local openenv api exactly like inference.py"
+      "norm_label": "hits the local openenv api exactly like inference.py",
+      "id": "train_trl_rationale_26"
     },
     {
       "label": "app.py",
@@ -422,18 +422,18 @@
       "file_type": "rationale",
       "source_file": "C:\\Users\\zayem\\Desktop\\urban_heat_env\\server\\environment.py",
       "source_location": "L1",
-      "id": "environment_rationale_1",
       "community": 0,
-      "norm_label": "core urban heat island environment logic.  the 8x8 city grid holds cells with su"
+      "norm_label": "core urban heat island environment logic.  the 8x8 city grid holds cells with su",
+      "id": "environment_rationale_1"
     },
     {
       "label": "Initialise/reinitialise the grid deterministically.",
       "file_type": "rationale",
       "source_file": "C:\\Users\\zayem\\Desktop\\urban_heat_env\\server\\environment.py",
       "source_location": "L63",
-      "id": "environment_rationale_63",
       "community": 0,
-      "norm_label": "initialise/reinitialise the grid deterministically."
+      "norm_label": "initialise/reinitialise the grid deterministically.",
+      "id": "environment_rationale_63"
     },
     {
       "label": "__init__.py",
@@ -450,7 +450,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "C:\\Users\\zayem\\Desktop\\urban_heat_env\\inference.py",
-      "source_location": "L38",
+      "source_location": "L42",
       "weight": 1.0,
       "_src": "c_users_zayem_desktop_urban_heat_env_inference_py",
       "_tgt": "inference_get_state",
@@ -462,7 +462,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "C:\\Users\\zayem\\Desktop\\urban_heat_env\\inference.py",
-      "source_location": "L43",
+      "source_location": "L47",
       "weight": 1.0,
       "_src": "c_users_zayem_desktop_urban_heat_env_inference_py",
       "_tgt": "inference_reset_env",
@@ -474,7 +474,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "C:\\Users\\zayem\\Desktop\\urban_heat_env\\inference.py",
-      "source_location": "L48",
+      "source_location": "L52",
       "weight": 1.0,
       "_src": "c_users_zayem_desktop_urban_heat_env_inference_py",
       "_tgt": "inference_step_env",
@@ -486,7 +486,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "C:\\Users\\zayem\\Desktop\\urban_heat_env\\inference.py",
-      "source_location": "L53",
+      "source_location": "L57",
       "weight": 1.0,
       "_src": "c_users_zayem_desktop_urban_heat_env_inference_py",
       "_tgt": "inference_get_tasks",
@@ -498,7 +498,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "C:\\Users\\zayem\\Desktop\\urban_heat_env\\inference.py",
-      "source_location": "L58",
+      "source_location": "L62",
       "weight": 1.0,
       "_src": "c_users_zayem_desktop_urban_heat_env_inference_py",
       "_tgt": "inference_grade_task",
@@ -510,7 +510,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "C:\\Users\\zayem\\Desktop\\urban_heat_env\\inference.py",
-      "source_location": "L63",
+      "source_location": "L67",
       "weight": 1.0,
       "_src": "c_users_zayem_desktop_urban_heat_env_inference_py",
       "_tgt": "inference_format_prompt",
@@ -522,7 +522,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "C:\\Users\\zayem\\Desktop\\urban_heat_env\\inference.py",
-      "source_location": "L84",
+      "source_location": "L88",
       "weight": 1.0,
       "_src": "c_users_zayem_desktop_urban_heat_env_inference_py",
       "_tgt": "inference_main",
@@ -534,7 +534,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "C:\\Users\\zayem\\Desktop\\urban_heat_env\\inference.py",
-      "source_location": "L130",
+      "source_location": "L134",
       "weight": 1.0,
       "_src": "inference_main",
       "_tgt": "inference_get_state",
@@ -546,7 +546,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "C:\\Users\\zayem\\Desktop\\urban_heat_env\\inference.py",
-      "source_location": "L124",
+      "source_location": "L128",
       "weight": 1.0,
       "_src": "inference_main",
       "_tgt": "inference_reset_env",
@@ -558,7 +558,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "C:\\Users\\zayem\\Desktop\\urban_heat_env\\inference.py",
-      "source_location": "L181",
+      "source_location": "L185",
       "weight": 1.0,
       "_src": "inference_main",
       "_tgt": "inference_step_env",
@@ -570,7 +570,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "C:\\Users\\zayem\\Desktop\\urban_heat_env\\inference.py",
-      "source_location": "L102",
+      "source_location": "L106",
       "weight": 1.0,
       "_src": "inference_main",
       "_tgt": "inference_get_tasks",
@@ -582,7 +582,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "C:\\Users\\zayem\\Desktop\\urban_heat_env\\inference.py",
-      "source_location": "L201",
+      "source_location": "L205",
       "weight": 1.0,
       "_src": "inference_main",
       "_tgt": "inference_grade_task",
@@ -594,7 +594,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "C:\\Users\\zayem\\Desktop\\urban_heat_env\\inference.py",
-      "source_location": "L134",
+      "source_location": "L138",
       "weight": 1.0,
       "_src": "inference_main",
       "_tgt": "inference_format_prompt",
@@ -716,11 +716,11 @@
       "source_file": "C:\\Users\\zayem\\Desktop\\urban_heat_env\\server\\environment.py",
       "source_location": "L19",
       "weight": 0.8,
-      "_src": "environment_citygrid",
-      "_tgt": "models_cellstate",
+      "_src": "models_cellstate",
+      "_tgt": "environment_citygrid",
+      "confidence_score": 0.5,
       "source": "models_cellstate",
-      "target": "environment_citygrid",
-      "confidence_score": 0.5
+      "target": "environment_citygrid"
     },
     {
       "relation": "uses",
@@ -728,11 +728,11 @@
       "source_file": "C:\\Users\\zayem\\Desktop\\urban_heat_env\\server\\environment.py",
       "source_location": "L19",
       "weight": 0.8,
-      "_src": "environment_rationale_1",
-      "_tgt": "models_cellstate",
+      "_src": "models_cellstate",
+      "_tgt": "environment_rationale_1",
+      "confidence_score": 0.5,
       "source": "models_cellstate",
-      "target": "environment_rationale_1",
-      "confidence_score": 0.5
+      "target": "environment_rationale_1"
     },
     {
       "relation": "uses",
@@ -740,11 +740,11 @@
       "source_file": "C:\\Users\\zayem\\Desktop\\urban_heat_env\\server\\environment.py",
       "source_location": "L19",
       "weight": 0.8,
-      "_src": "environment_rationale_63",
-      "_tgt": "models_cellstate",
+      "_src": "models_cellstate",
+      "_tgt": "environment_rationale_63",
+      "confidence_score": 0.5,
       "source": "models_cellstate",
-      "target": "environment_rationale_63",
-      "confidence_score": 0.5
+      "target": "environment_rationale_63"
     },
     {
       "relation": "calls",
@@ -753,8 +753,8 @@
       "source_file": "C:\\Users\\zayem\\Desktop\\urban_heat_env\\server\\environment.py",
       "source_location": "L324",
       "weight": 1.0,
-      "_src": "environment_citygrid_build_city_state",
-      "_tgt": "models_cellstate",
+      "_src": "models_cellstate",
+      "_tgt": "environment_citygrid_build_city_state",
       "source": "models_cellstate",
       "target": "environment_citygrid_build_city_state"
     },
@@ -848,11 +848,11 @@
       "source_file": "C:\\Users\\zayem\\Desktop\\urban_heat_env\\server\\environment.py",
       "source_location": "L19",
       "weight": 0.8,
-      "_src": "environment_citygrid",
-      "_tgt": "models_activeintervention",
+      "_src": "models_activeintervention",
+      "_tgt": "environment_citygrid",
+      "confidence_score": 0.5,
       "source": "models_activeintervention",
-      "target": "environment_citygrid",
-      "confidence_score": 0.5
+      "target": "environment_citygrid"
     },
     {
       "relation": "uses",
@@ -860,11 +860,11 @@
       "source_file": "C:\\Users\\zayem\\Desktop\\urban_heat_env\\server\\environment.py",
       "source_location": "L19",
       "weight": 0.8,
-      "_src": "environment_rationale_1",
-      "_tgt": "models_activeintervention",
+      "_src": "models_activeintervention",
+      "_tgt": "environment_rationale_1",
+      "confidence_score": 0.5,
       "source": "models_activeintervention",
-      "target": "environment_rationale_1",
-      "confidence_score": 0.5
+      "target": "environment_rationale_1"
     },
     {
       "relation": "uses",
@@ -872,11 +872,11 @@
       "source_file": "C:\\Users\\zayem\\Desktop\\urban_heat_env\\server\\environment.py",
       "source_location": "L19",
       "weight": 0.8,
-      "_src": "environment_rationale_63",
-      "_tgt": "models_activeintervention",
+      "_src": "models_activeintervention",
+      "_tgt": "environment_rationale_63",
+      "confidence_score": 0.5,
       "source": "models_activeintervention",
-      "target": "environment_rationale_63",
-      "confidence_score": 0.5
+      "target": "environment_rationale_63"
     },
     {
       "relation": "calls",
@@ -885,8 +885,8 @@
       "source_file": "C:\\Users\\zayem\\Desktop\\urban_heat_env\\server\\environment.py",
       "source_location": "L332",
       "weight": 1.0,
-      "_src": "environment_citygrid_build_city_state",
-      "_tgt": "models_activeintervention",
+      "_src": "models_activeintervention",
+      "_tgt": "environment_citygrid_build_city_state",
       "source": "models_activeintervention",
       "target": "environment_citygrid_build_city_state"
     },
@@ -896,11 +896,11 @@
       "source_file": "C:\\Users\\zayem\\Desktop\\urban_heat_env\\server\\environment.py",
       "source_location": "L19",
       "weight": 0.8,
-      "_src": "environment_citygrid",
-      "_tgt": "models_proposal",
+      "_src": "models_proposal",
+      "_tgt": "environment_citygrid",
+      "confidence_score": 0.5,
       "source": "models_proposal",
-      "target": "environment_citygrid",
-      "confidence_score": 0.5
+      "target": "environment_citygrid"
     },
     {
       "relation": "uses",
@@ -908,11 +908,11 @@
       "source_file": "C:\\Users\\zayem\\Desktop\\urban_heat_env\\server\\environment.py",
       "source_location": "L19",
       "weight": 0.8,
-      "_src": "environment_rationale_1",
-      "_tgt": "models_proposal",
+      "_src": "models_proposal",
+      "_tgt": "environment_rationale_1",
+      "confidence_score": 0.5,
       "source": "models_proposal",
-      "target": "environment_rationale_1",
-      "confidence_score": 0.5
+      "target": "environment_rationale_1"
     },
     {
       "relation": "uses",
@@ -920,11 +920,11 @@
       "source_file": "C:\\Users\\zayem\\Desktop\\urban_heat_env\\server\\environment.py",
       "source_location": "L19",
       "weight": 0.8,
-      "_src": "environment_rationale_63",
-      "_tgt": "models_proposal",
+      "_src": "models_proposal",
+      "_tgt": "environment_rationale_63",
+      "confidence_score": 0.5,
       "source": "models_proposal",
-      "target": "environment_rationale_63",
-      "confidence_score": 0.5
+      "target": "environment_rationale_63"
     },
     {
       "relation": "calls",
@@ -933,8 +933,8 @@
       "source_file": "C:\\Users\\zayem\\Desktop\\urban_heat_env\\server\\environment.py",
       "source_location": "L333",
       "weight": 1.0,
-      "_src": "environment_citygrid_build_city_state",
-      "_tgt": "models_proposal",
+      "_src": "models_proposal",
+      "_tgt": "environment_citygrid_build_city_state",
       "source": "models_proposal",
       "target": "environment_citygrid_build_city_state"
     },
@@ -944,11 +944,11 @@
       "source_file": "C:\\Users\\zayem\\Desktop\\urban_heat_env\\server\\environment.py",
       "source_location": "L19",
       "weight": 0.8,
-      "_src": "environment_citygrid",
-      "_tgt": "models_citystate",
+      "_src": "models_citystate",
+      "_tgt": "environment_citygrid",
+      "confidence_score": 0.5,
       "source": "models_citystate",
-      "target": "environment_citygrid",
-      "confidence_score": 0.5
+      "target": "environment_citygrid"
     },
     {
       "relation": "uses",
@@ -956,11 +956,11 @@
       "source_file": "C:\\Users\\zayem\\Desktop\\urban_heat_env\\server\\environment.py",
       "source_location": "L19",
       "weight": 0.8,
-      "_src": "environment_rationale_1",
-      "_tgt": "models_citystate",
+      "_src": "models_citystate",
+      "_tgt": "environment_rationale_1",
+      "confidence_score": 0.5,
       "source": "models_citystate",
-      "target": "environment_rationale_1",
-      "confidence_score": 0.5
+      "target": "environment_rationale_1"
     },
     {
       "relation": "uses",
@@ -968,11 +968,11 @@
       "source_file": "C:\\Users\\zayem\\Desktop\\urban_heat_env\\server\\environment.py",
       "source_location": "L19",
       "weight": 0.8,
-      "_src": "environment_rationale_63",
-      "_tgt": "models_citystate",
+      "_src": "models_citystate",
+      "_tgt": "environment_rationale_63",
+      "confidence_score": 0.5,
       "source": "models_citystate",
-      "target": "environment_rationale_63",
-      "confidence_score": 0.5
+      "target": "environment_rationale_63"
     },
     {
       "relation": "calls",
@@ -981,8 +981,8 @@
       "source_file": "C:\\Users\\zayem\\Desktop\\urban_heat_env\\server\\environment.py",
       "source_location": "L340",
       "weight": 1.0,
-      "_src": "environment_citygrid_build_city_state",
-      "_tgt": "models_citystate",
+      "_src": "models_citystate",
+      "_tgt": "environment_citygrid_build_city_state",
       "source": "models_citystate",
       "target": "environment_citygrid_build_city_state"
     },
@@ -992,11 +992,11 @@
       "source_file": "C:\\Users\\zayem\\Desktop\\urban_heat_env\\server\\environment.py",
       "source_location": "L19",
       "weight": 0.8,
-      "_src": "environment_citygrid",
-      "_tgt": "models_taskresult",
+      "_src": "models_taskresult",
+      "_tgt": "environment_citygrid",
+      "confidence_score": 0.5,
       "source": "models_taskresult",
-      "target": "environment_citygrid",
-      "confidence_score": 0.5
+      "target": "environment_citygrid"
     },
     {
       "relation": "uses",
@@ -1004,11 +1004,11 @@
       "source_file": "C:\\Users\\zayem\\Desktop\\urban_heat_env\\server\\environment.py",
       "source_location": "L19",
       "weight": 0.8,
-      "_src": "environment_rationale_1",
-      "_tgt": "models_taskresult",
+      "_src": "models_taskresult",
+      "_tgt": "environment_rationale_1",
+      "confidence_score": 0.5,
       "source": "models_taskresult",
-      "target": "environment_rationale_1",
-      "confidence_score": 0.5
+      "target": "environment_rationale_1"
     },
     {
       "relation": "uses",
@@ -1016,11 +1016,11 @@
       "source_file": "C:\\Users\\zayem\\Desktop\\urban_heat_env\\server\\environment.py",
       "source_location": "L19",
       "weight": 0.8,
-      "_src": "environment_rationale_63",
-      "_tgt": "models_taskresult",
+      "_src": "models_taskresult",
+      "_tgt": "environment_rationale_63",
+      "confidence_score": 0.5,
       "source": "models_taskresult",
-      "target": "environment_rationale_63",
-      "confidence_score": 0.5
+      "target": "environment_rationale_63"
     },
     {
       "relation": "calls",
@@ -1029,8 +1029,8 @@
       "source_file": "C:\\Users\\zayem\\Desktop\\urban_heat_env\\server\\environment.py",
       "source_location": "L264",
       "weight": 1.0,
-      "_src": "environment_citygrid_grade_task",
-      "_tgt": "models_taskresult",
+      "_src": "models_taskresult",
+      "_tgt": "environment_citygrid_grade_task",
       "source": "models_taskresult",
       "target": "environment_citygrid_grade_task"
     },
@@ -1041,8 +1041,8 @@
       "source_file": "C:\\Users\\zayem\\Desktop\\urban_heat_env\\server\\environment.py",
       "source_location": "L271",
       "weight": 1.0,
-      "_src": "environment_citygrid_grade_reduce_avg_temp",
-      "_tgt": "models_taskresult",
+      "_src": "models_taskresult",
+      "_tgt": "environment_citygrid_grade_reduce_avg_temp",
       "source": "models_taskresult",
       "target": "environment_citygrid_grade_reduce_avg_temp"
     },
@@ -1053,8 +1053,8 @@
       "source_file": "C:\\Users\\zayem\\Desktop\\urban_heat_env\\server\\environment.py",
       "source_location": "L287",
       "weight": 1.0,
-      "_src": "environment_citygrid_grade_protect_dense_zones",
-      "_tgt": "models_taskresult",
+      "_src": "models_taskresult",
+      "_tgt": "environment_citygrid_grade_protect_dense_zones",
       "source": "models_taskresult",
       "target": "environment_citygrid_grade_protect_dense_zones"
     },
@@ -1065,8 +1065,8 @@
       "source_file": "C:\\Users\\zayem\\Desktop\\urban_heat_env\\server\\environment.py",
       "source_location": "L302",
       "weight": 1.0,
-      "_src": "environment_citygrid_grade_full_mitigation",
-      "_tgt": "models_taskresult",
+      "_src": "models_taskresult",
+      "_tgt": "environment_citygrid_grade_full_mitigation",
       "source": "models_taskresult",
       "target": "environment_citygrid_grade_full_mitigation"
     },
@@ -1077,8 +1077,8 @@
       "source_file": "C:\\Users\\zayem\\Desktop\\urban_heat_env\\server\\app.py",
       "source_location": "L44",
       "weight": 1.0,
-      "_src": "app_step",
-      "_tgt": "models_obsresult",
+      "_src": "models_obsresult",
+      "_tgt": "app_step",
       "source": "models_obsresult",
       "target": "app_step"
     },
@@ -1089,8 +1089,8 @@
       "source_file": "C:\\Users\\zayem\\Desktop\\urban_heat_env\\server\\app.py",
       "source_location": "L55",
       "weight": 1.0,
-      "_src": "app_get_tasks",
-      "_tgt": "models_taskdefinition",
+      "_src": "models_taskdefinition",
+      "_tgt": "app_get_tasks",
       "source": "models_taskdefinition",
       "target": "app_get_tasks"
     },

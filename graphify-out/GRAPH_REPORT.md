@@ -1,7 +1,7 @@
-# Graph Report - C:\Users\zayem\Desktop\urban_heat_env  (2026-04-24)
+# Graph Report - C:\Users\zayem\Desktop\urban_heat_env  (2026-04-25)
 
 ## Corpus Check
-- 6 files · ~6,229 words
+- 6 files · ~11,950 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -31,16 +31,16 @@
 10. `main()` - 4 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `CityGrid` --uses--> `CellState`  [INFERRED]
-  C:\Users\zayem\Desktop\urban_heat_env\server\environment.py → C:\Users\zayem\Desktop\urban_heat_env\models.py
-- `CityGrid` --uses--> `ActiveIntervention`  [INFERRED]
-  C:\Users\zayem\Desktop\urban_heat_env\server\environment.py → C:\Users\zayem\Desktop\urban_heat_env\models.py
-- `CityGrid` --uses--> `Proposal`  [INFERRED]
-  C:\Users\zayem\Desktop\urban_heat_env\server\environment.py → C:\Users\zayem\Desktop\urban_heat_env\models.py
-- `CityGrid` --uses--> `CityState`  [INFERRED]
-  C:\Users\zayem\Desktop\urban_heat_env\server\environment.py → C:\Users\zayem\Desktop\urban_heat_env\models.py
-- `Core Urban Heat Island environment logic.  The 8x8 city grid holds cells with su` --uses--> `TaskResult`  [INFERRED]
-  C:\Users\zayem\Desktop\urban_heat_env\server\environment.py → C:\Users\zayem\Desktop\urban_heat_env\models.py
+- `CellState` --uses--> `CityGrid`  [INFERRED]
+  C:\Users\zayem\Desktop\urban_heat_env\models.py → C:\Users\zayem\Desktop\urban_heat_env\server\environment.py
+- `ActiveIntervention` --uses--> `CityGrid`  [INFERRED]
+  C:\Users\zayem\Desktop\urban_heat_env\models.py → C:\Users\zayem\Desktop\urban_heat_env\server\environment.py
+- `Proposal` --uses--> `CityGrid`  [INFERRED]
+  C:\Users\zayem\Desktop\urban_heat_env\models.py → C:\Users\zayem\Desktop\urban_heat_env\server\environment.py
+- `CityState` --uses--> `CityGrid`  [INFERRED]
+  C:\Users\zayem\Desktop\urban_heat_env\models.py → C:\Users\zayem\Desktop\urban_heat_env\server\environment.py
+- `TaskResult` --uses--> `Core Urban Heat Island environment logic.  The 8x8 city grid holds cells with su`  [INFERRED]
+  C:\Users\zayem\Desktop\urban_heat_env\models.py → C:\Users\zayem\Desktop\urban_heat_env\server\environment.py
 
 ## Communities
 
