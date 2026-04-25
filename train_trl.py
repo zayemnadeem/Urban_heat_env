@@ -15,7 +15,7 @@ import re
 
 # Set up PPO Configuration
 config = PPOConfig(
-    model_name="Qwen/Qwen2.5-1.5B-Instruct", # Use a smaller model for Colab
+    model_name="Qwen/Qwen2.5-0.5B-Instruct", # Switched to 0.5B to fit in Colab T4
     learning_rate=1.41e-5,
     batch_size=1,
     mini_batch_size=1,
@@ -39,8 +39,19 @@ def format_env_prompt(state):
 
 def main():
     print("Loading Model and Tokenizer...")
-    # Wrap model with Value Head for PPO
-    model = AutoModelForCausalLMWithValueHead.from_pretrained(config.model_name)
+    from peft import LoraConfig
+    lora_config = LoraConfig(
+        r=16,
+        lora_alpha=32,
+        lora_dropout=0.05,
+        bias="none",
+        task_type="CAUSAL_LM",
+    )
+    # Wrap model with Value Head for PPO and apply LoRA
+    model = AutoModelForCausalLMWithValueHead.from_pretrained(
+        config.model_name,
+        peft_config=lora_config
+    )
     tokenizer = AutoTokenizer.from_pretrained(config.model_name)
     tokenizer.pad_token = tokenizer.eos_token
 
