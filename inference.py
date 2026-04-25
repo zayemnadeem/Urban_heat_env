@@ -121,6 +121,7 @@ def main():
         "Respond ONLY with valid JSON for one action at a time."
     )
     
+    all_inference_rewards = {}
     for task in tasks:
         task_id = task['id']
         
@@ -216,6 +217,11 @@ def main():
             rewards_str = ",".join([f"{r:.2f}" for r in step_rewards]) if step_rewards else "0.00"
             # CLAMPED EXCEPTION TRAP
             print(f"[END] success=false steps={steps_taken} score=0.001 rewards={rewards_str}", flush=True)
+
+        all_inference_rewards[task_id] = step_rewards
+
+    with open("inference_metrics.json", "w") as f:
+        json.dump(all_inference_rewards, f)
 
 if __name__ == "__main__":
     main()

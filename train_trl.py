@@ -62,6 +62,7 @@ def main():
     reset_state = requests.post("http://localhost:8000/reset").json()
 
     print("Starting PPO Training Loop...")
+    epoch_rewards = []
     for epoch in range(1000): # Example epochs
         query_texts = [format_env_prompt(reset_state)]
         query_tensors = [tokenizer(q, return_tensors="pt").input_ids[0] for q in query_texts]
@@ -107,6 +108,19 @@ def main():
             reset_state = requests.post("http://localhost:8000/reset").json()
         else:
             reset_state = obs.get("state", reset_state)
+            
+        epoch_rewards.append(reward)
+
+    with open("train_metrics.json", "w") as f:
+        json.dump({"epoch_rewards": epoch_rewards}, f)
+
+    try:
+        result = requests.get("http://localhost:8000/grade/full_mitigation").json()
+        score = result.get("score", 0.0)
+        success = "true" if score > 0.1 else "false"
+        print(f"[END] success={success} score={score:.3f}")
+    except Exception as e:
+        pass
 
     print("Training Script Dry-run Completed successfully.")
 
