@@ -94,5 +94,5 @@ def main():
     print("Training Script Dry-run Completed successfully.")
 
 if __name__ == "__main__":
-    # main()
+    main()
     print("Minimal TRL script ready. Run via typical python runtime when server is up.")
