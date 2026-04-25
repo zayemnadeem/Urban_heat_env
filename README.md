@@ -9,6 +9,8 @@ pinned: false
 
 # Urban Heat Island Mitigation Planner — Round 2
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Shoaibahmed-2005/Urban-Heat-Round-2/blob/main/train_trl.ipynb)
+
 An intricately designed, multi-theme RL environment for the Meta × HuggingFace OpenEnv Hackathon.
 
 ## Overview
