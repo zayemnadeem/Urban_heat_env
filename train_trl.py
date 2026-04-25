@@ -62,7 +62,7 @@ def main():
     reset_state = requests.post("http://localhost:8000/reset").json()
 
     print("Starting PPO Training Loop...")
-    for epoch in range(10): # Example epochs
+    for epoch in range(1000): # Example epochs
         query_texts = [format_env_prompt(reset_state)]
         query_tensors = [tokenizer(q, return_tensors="pt").input_ids[0] for q in query_texts]
 
