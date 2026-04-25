@@ -24,6 +24,12 @@ grid = CityGrid()
 # Initialise grid so /state doesn't error before /reset
 grid.reset()
 
+from fastapi.responses import FileResponse
+
+@app.get("/")
+def serve_dashboard():
+    return FileResponse("dashboard.html")
+
 @app.get("/health")
 def health():
     return {"status": "ok"}
