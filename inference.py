@@ -6,6 +6,10 @@ import requests
 import re
 import random
 from openai import OpenAI
+from dotenv import load_dotenv
+
+# Load variables from .env automatically
+load_dotenv()
 
 # ==========================================
 # FIX 1: BEAT THE AUTOGRADER CODE SCANNER
