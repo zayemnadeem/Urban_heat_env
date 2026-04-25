@@ -17,10 +17,13 @@ from trl import AutoModelForCausalLMWithValueHead, PPOConfig, PPOTrainer
 # ─────────────────────────────────────────────
 config = PPOConfig(
     model_name="Qwen/Qwen2.5-0.5B-Instruct",
-    learning_rate=1.41e-5,
+    learning_rate=5e-6,            # Lowered: 1.41e-5 was causing KL explosion
     batch_size=1,
     mini_batch_size=1,
     gradient_accumulation_steps=1,
+    target_kl=0.1,                 # Stops update if KL exceeds this — prevents collapse
+    init_kl_coef=0.2,              # Initial KL penalty coefficient
+    kl_penalty="kl",               # Use raw KL (more stable than "abs")
 )
 
 TOTAL_EPOCHS = 1000
@@ -105,8 +108,14 @@ def main():
         query_texts = [format_env_prompt(reset_state)]
         query_tensors = [tokenizer(q, return_tensors="pt").input_ids[0] for q in query_texts]
 
-        # 1. Generate from model
-        response_tensors = trainer.generate(query_tensors, return_prompt=False, max_new_tokens=100)
+        # 1. Generate from model (temperature=0.7 keeps outputs diverse but valid)
+        response_tensors = trainer.generate(
+            query_tensors,
+            return_prompt=False,
+            max_new_tokens=80,
+            temperature=0.7,
+            do_sample=True,
+        )
         response_text = tokenizer.decode(response_tensors[0], skip_special_tokens=True)
 
         # 2. Parse model output
@@ -142,9 +151,9 @@ def main():
         obs = env_step(action_data)
         reward = obs.get("reward", 0.0)
 
-        # 6. Reward shaping: small bonus for producing valid JSON (teaches the model to speak JSON)
-        if response_text.strip().startswith("{"):
-            reward += 0.05
+        # 6. Reward shaping: bonus for producing valid JSON anywhere in output
+        if re.search(r'\{[^{}]*\}', response_text):
+            reward += 0.1
 
         # 7. PPO update
         reward_tensor = [torch.tensor(float(reward))]
