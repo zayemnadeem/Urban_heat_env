@@ -23,9 +23,9 @@ from trl import AutoModelForCausalLMWithValueHead, PPOConfig, PPOTrainer
 # ─────────────────────────────────────────────
 config = PPOConfig(
     model_name="Qwen/Qwen2.5-0.5B-Instruct",
-    learning_rate=1e-5,
-    batch_size=4,
-    mini_batch_size=2,
+    learning_rate=5e-6,
+    batch_size=2,
+    mini_batch_size=1,
     gradient_accumulation_steps=1,
     target_kl=0.1,
     init_kl_coef=0.2,
@@ -185,7 +185,7 @@ def main():
 
         for b in range(ROLLOUT_STEPS_PER_EPOCH):
             query_text = format_env_prompt(reset_state)
-            q_ids = tokenizer(query_text, return_tensors="pt").input_ids[0]
+            q_ids = tokenizer.encode(query_text, return_tensors="pt").squeeze(0).to(model.device)
 
             # Generate candidate action from model
             gen = trainer.generate(
@@ -193,14 +193,14 @@ def main():
                 return_prompt=False,
                 max_new_tokens=32,
                 do_sample=True,
+                temperature=0.8,
                 top_k=50,
                 top_p=0.95,
-                temperature=0.7,
                 pad_token_id=tokenizer.eos_token_id
             )
             model_resp_ids = gen[0]
             model_resp_text = tokenizer.decode(model_resp_ids, skip_special_tokens=True)
-            if model_resp_text.strip() == "":
+            if len(model_resp_text.strip()) == 0:
                 model_resp_text = "query_zoning 0 0"
 
             parsed_action = None
@@ -221,9 +221,9 @@ def main():
                 # IMPORTANT: make PPO update consistent with executed action.
                 # We replace the response tokens with the teacher JSON so rewards align.
                 teacher_text = json.dumps(parsed_action, separators=(",", ":"))
-                resp_ids = tokenizer(teacher_text, return_tensors="pt").input_ids[0]
+                resp_ids = tokenizer.encode(teacher_text, return_tensors="pt").squeeze(0).to(model.device)
             else:
-                resp_ids = model_resp_ids
+                resp_ids = tokenizer.encode(model_resp_text, return_tensors="pt").squeeze(0).to(model.device)
 
             # Build final action (clamped)
             action_data = {
