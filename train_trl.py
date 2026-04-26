@@ -124,18 +124,19 @@ GRID_CELLS = [(r, c) for r in range(8) for c in range(8)]  # 64 cells
 INTERVENTION_TYPES = ["tree_canopy", "green_roof", "reflective_surface"]
 BUREAUCRATIC_SEQUENCE = ["query_zoning", "propose_budget", "deploy_intervention"]
 
-def smart_action(epoch):
-    """Returns a bureaucratically valid action for the current epoch."""
-    step_in_sequence = epoch % 3                    # rotates through query/propose/deploy
-    cell_idx = (epoch // 3) % len(GRID_CELLS)       # advances to next grid cell every 3 epochs
-    row, col = GRID_CELLS[cell_idx]
-    intervention = INTERVENTION_TYPES[(epoch // (3 * len(GRID_CELLS))) % len(INTERVENTION_TYPES)]
-    return {
-        "action_type": BUREAUCRATIC_SEQUENCE[step_in_sequence],
-        "intervention_type": intervention,
-        "row": row,
-        "col": col,
-    }
+def smart_random_action(step):
+    row = random.randint(0, 7)
+    col = random.randint(0, 7)
+    intervention = random.choice(INTERVENTION_TYPES)
+
+    phase = step % 3
+
+    if phase == 0:
+        return {"action_type": "query_zoning", "row": row, "col": col, "intervention_type": intervention}
+    elif phase == 1:
+        return {"action_type": "propose_budget", "row": row, "col": col, "intervention_type": intervention}
+    else:
+        return {"action_type": "deploy_intervention", "row": row, "col": col, "intervention_type": intervention}
 
 # ─────────────────────────────────────────────
 # Main
@@ -200,7 +201,7 @@ def main():
             exploration_prob = 0.9 - (epoch / TOTAL_EPOCHS) * 0.8
             guided = (parsed_action is None) or (random.random() < exploration_prob)
             if guided:
-                teacher_action = smart_action(epoch * ROLLOUT_STEPS_PER_EPOCH + b)
+                teacher_action = smart_random_action(epoch * ROLLOUT_STEPS_PER_EPOCH + b)
                 parsed_action = teacher_action
                 # IMPORTANT: make PPO update consistent with executed action.
                 # We replace the response tokens with the teacher JSON so rewards align.

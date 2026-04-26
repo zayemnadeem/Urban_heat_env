@@ -117,6 +117,7 @@ class CityGrid:
     ) -> tuple[CityState, float, bool, dict[str, Any]]:
         
         info: dict[str, Any] = {"error": None}
+        action_success = None
         # Keep a copy of the previous temperature field so step-reward
         # can measure improvement from the last timestep.
         prev_temps = self.temperatures.copy()
@@ -161,26 +162,37 @@ class CityGrid:
                     
         elif action_type == "deploy_intervention":
             if intervention_type not in INTERVENTIONS:
-                info["error"] = f"Unknown intervention: {intervention_type}"
+                info["error"] = "Invalid intervention"
             else:
-                approved = False
-                for p in self.proposals:
-                    if p["row"] == row and p["col"] == col and p["intervention_type"] == intervention_type and p["status"] == "approved":
-                        approved = True
-                        break
-                
-                if not approved:
-                    info["error"] = "Deployment failed: No approved budget proposal from Mayor."
+                # REQUIRE proposal (soft constraint, not hard fail)
+                approved = any(
+                    p["row"] == row and p["col"] == col and p["intervention_type"] == intervention_type and p["status"] == "approved"
+                    for p in self.proposals
+                )
+
+                cost = INTERVENTIONS[intervention_type]["cost"]
+
+                if cost > self.budget:
+                    info["error"] = "Insufficient budget"
                 else:
-                    cost = INTERVENTIONS[intervention_type]["cost"]
-                    if cost > self.budget:
-                        info["error"] = "Insufficient budget to deploy."
+                    self.budget -= cost
+
+                    # Even if not approved, allow but penalize
+                    if not approved:
+                        info["error"] = "No proposal before deploy"
+                        penalty = True
                     else:
-                        self.budget -= cost
-                        self.active_interventions.append({
-                            "row": row, "col": col, "intervention_type": intervention_type, "age": -1
-                        })
+                        penalty = False
                         info["success"] = f"Deployed {intervention_type} at {row},{col}"
+
+                    self.active_interventions.append({
+                        "row": row,
+                        "col": col,
+                        "intervention_type": intervention_type,
+                        "age": -1
+                    })
+
+                    action_success = not penalty
         
         else:
             info["error"] = f"Unknown action_type {action_type}"
@@ -249,6 +261,15 @@ class CityGrid:
 
         # Compute Step Reward
         reward = self._compute_step_reward(task_id, prev_temps)
+
+        if action_success is True:
+            reward += 3.0
+        elif action_success is False:
+            reward -= 3.0
+
+        # Penalize skipping workflow
+        if info.get("error") == "No proposal before deploy":
+            reward -= 5.0
 
         if self.step_count >= MAX_STEPS:
             self.done = True
