@@ -23,14 +23,15 @@ from trl import AutoModelForCausalLMWithValueHead, PPOConfig, PPOTrainer
 # ─────────────────────────────────────────────
 config = PPOConfig(
     model_name="Qwen/Qwen2.5-0.5B-Instruct",
-    learning_rate=5e-6,            # Lowered: 1.41e-5 was causing KL explosion
-    # Batch PPO updates to reduce variance (critical for sparse/noisy env rewards)
+    learning_rate=1e-5,
     batch_size=4,
     mini_batch_size=2,
     gradient_accumulation_steps=1,
-    target_kl=0.1,                 # Stops update if KL exceeds this — prevents collapse
-    init_kl_coef=0.2,              # Initial KL penalty coefficient
-    kl_penalty="kl",               # Use raw KL (more stable than "abs")
+    target_kl=0.1,
+    init_kl_coef=0.2,
+    kl_penalty="kl",
+    target=6,
+    horizon=10000,
 )
 
 TOTAL_EPOCHS = 1000
@@ -191,11 +192,16 @@ def main():
                 [q_ids],
                 return_prompt=False,
                 max_new_tokens=32,
-                temperature=0.7,
                 do_sample=True,
+                top_k=50,
+                top_p=0.95,
+                temperature=0.7,
+                pad_token_id=tokenizer.eos_token_id
             )
             model_resp_ids = gen[0]
             model_resp_text = tokenizer.decode(model_resp_ids, skip_special_tokens=True)
+            if model_resp_text.strip() == "":
+                model_resp_text = "query_zoning 0 0"
 
             parsed_action = None
             try:
@@ -245,9 +251,12 @@ def main():
             shaped *= 10.0
             env_reward_scaled = env_reward * 10.0
 
+            # Clip and normalize rewards
+            shaped = max(min(shaped, 10.0), -10.0)
+
             query_tensors.append(q_ids)
             response_tensors.append(resp_ids)
-            reward_tensors.append(torch.tensor(float(shaped)))
+            reward_tensors.append(torch.tensor(float(shaped) / 10.0))
 
             batch_env_reward += env_reward_scaled
             batch_shaped_reward += shaped
