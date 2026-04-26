@@ -4,7 +4,13 @@ Demonstrates training the Urban Heat Env using Hugging Face TRL (PPO).
 Guided Exploration prevents mode collapse and guarantees an authentic learning curve.
 """
 
+import os
+os.environ["PYTORCH_CUDA_ALLOC_CONF"] = "expandable_segments:True"
+
 import torch
+torch.backends.cuda.matmul.allow_tf32 = True
+torch.cuda.empty_cache()
+
 import random
 import requests
 import json
@@ -19,8 +25,8 @@ config = PPOConfig(
     model_name="Qwen/Qwen2.5-0.5B-Instruct",
     learning_rate=5e-6,            # Lowered: 1.41e-5 was causing KL explosion
     # Batch PPO updates to reduce variance (critical for sparse/noisy env rewards)
-    batch_size=8,
-    mini_batch_size=4,
+    batch_size=4,
+    mini_batch_size=2,
     gradient_accumulation_steps=1,
     target_kl=0.1,                 # Stops update if KL exceeds this — prevents collapse
     init_kl_coef=0.2,              # Initial KL penalty coefficient
@@ -148,7 +154,10 @@ def main():
         r=16, lora_alpha=32, lora_dropout=0.05, bias="none", task_type="CAUSAL_LM"
     )
     model = AutoModelForCausalLMWithValueHead.from_pretrained(
-        config.model_name, peft_config=lora_config
+        config.model_name,
+        torch_dtype=torch.float16,
+        device_map="auto",
+        peft_config=lora_config
     )
     tokenizer = AutoTokenizer.from_pretrained(config.model_name)
     tokenizer.pad_token = tokenizer.eos_token
@@ -181,7 +190,7 @@ def main():
             gen = trainer.generate(
                 [q_ids],
                 return_prompt=False,
-                max_new_tokens=96,
+                max_new_tokens=32,
                 temperature=0.7,
                 do_sample=True,
             )
